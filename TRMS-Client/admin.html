@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Requests</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js"></script>
+</head>
+<body>
+    <ul>
+        <li><a onclick="window.location='requests.html'+window.location.search;">View your Requests</a></li>
+        <li><a class="active" href="">Admin Requests</a></li>
+        <li><a onclick="window.location='submit.html'+window.location.search;">Submit a Request</a></li>
+    </ul>
+    <div id="requests" class="requests">
+        <h1>Admin Reimbursement Requests</h1>
+    </div>
+</body>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const eId = params.get("eId");
+        getRequestsForAdmin(eId);
+    </script>
+</html>

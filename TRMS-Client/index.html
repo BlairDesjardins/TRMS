@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Email">
+    
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password">
+        <div class="center">
+            <button onclick="login()">Log in</button>
+        </div>
+    </div>
+</body>
+<script>
+    async function login() {
+        let emailVal = document.getElementById("email").value;
+        let passwordVal = document.getElementById("password").value;
+
+        let user = {
+            email: emailVal,
+            password: passwordVal
+        };
+
+        const url = "http://localhost:5000/employees/login";
+
+        let httpResponse = await fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+
+        const body = await httpResponse.json();
+        console.log(body);
+
+        window.location.href = `requests.html?eId=${body.eId}`
+    }
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Requests</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js"></script>
+</head>
+<body>
+    <ul>
+        <li><a onclick="window.location='requests.html'+window.location.search;">View your Requests</a></li>
+        <li><a onclick="window.location='admin.html'+window.location.search;">Admin Requests</a></li>
+        <li><a class="active" href="">Submit a Request</a></li>
+    </ul>
+
+    <div id="requests" class="requests">
+        <h1>Submit a Reimbursement Request</h1>
+        <table>
+            <tr>
+                <td class="header"><label for="descInput">Description:</label></td>
+                <td><textarea name="descInput" id="descInput" cols="40" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td class="header"><label for="costInput">Cost:</label></td>
+                <td><input type="number" id="costInput" min="0" style="width: 90%;"/></td>
+            </tr>
+            <tr>
+                <td class="header"><label for="locationInput">Location:</label></td>
+                <td><input type="text" id="locationInput" style="width: 90%;"/></td>
+            </tr>
+            <tr>
+                <td class="header"><label for="dateInput">Date:</label></td>
+                <td><input type="date" id="dateInput" name="dateInput" value="2022-05-01"/></td>
+            </tr>
+                <td class="header"><label for="timeInput">Time:</label></td>
+                <td><input type="time" id="timeInput" name="timeInput"></td>
+            <tr>
+                <td class="header"><label for="eventInput">Event Type:</label></td>
+                <td>
+                    <select name="eventInput" id="eventInput">
+                      <option value="1">University Course</option>
+                      <option value="2">Seminar</option>
+                      <option value="3">Certification Preparation Class</option>
+                      <option value="4">Certification</option>
+                      <option value="5">Technical Training</option>
+                      <option value="6">Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button onclick="submitRequest()">Submit Reimbursement Request</button></td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+</html>

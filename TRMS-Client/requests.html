@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Requests</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js"></script>
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="">View your Requests</a></li>
+        <li><a onclick="window.location='admin.html'+window.location.search;">Admin Requests</a></li>
+        <li><a onclick="window.location='submit.html'+window.location.search;">Submit a Request</a></li>
+    </ul>
+    <div id="requests" class="requests">
+        <h1>Reimbursement Requests</h1>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Submit a Document</h2>
+            <table>
+                <tr>
+                    <td class="header"><label for="descInput">Description:</label></td>
+                    <td><textarea name="descInput" id="descInput" cols="40" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="header"><label for="gradeInput">Grade:</label></td>
+                    <td><input type="number" id="gradeInput" min="0" max="100" style="width: 90%;"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button id="submitDocBtn">Submit Document</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const eId = params.get("eId");
+        getRequestsForEmployee(eId);
+    </script>
+</html>
