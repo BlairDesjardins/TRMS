@@ -10,10 +10,12 @@ JavaScript, HTML, CSS, SQL, Python, Flask, Postman
 
 ## Features
 
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+List of features ready
+* Log in as any employee using email and password
+* Retrieve a list of all your submitted reimbursement requests and requests awaiting your approval
+* Submit new reimbursements requests
+* Submit new documents to support your reimbursement requests
+* Approve and deny reimbursement requests
 
 ## Getting Started
 
